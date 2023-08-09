@@ -1,0 +1,72 @@
+﻿<Window x:Class="ShatRangyy.MessageBox_"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ShatRangyy"
+        mc:Ignorable="d"
+        Title="MessageBox_"
+        AllowsTransparency="True"
+        Height="111.333"
+        Width="500.333" 
+        ShowInTaskbar="False"
+        ResizeMode="NoResize" 
+        Background="Transparent"
+        WindowStyle="None">
+    <Border x:Name="MainBorder"
+            Background="Gray" 
+            CornerRadius="20">
+        <Border.Effect>
+            <DropShadowEffect ShadowDepth="2" 
+                              Opacity="0.5"
+                              BlurRadius="5"/>
+        </Border.Effect>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="42"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Border x:Name="RightBorder"
+                    Grid.Column="1"
+                    Background="#F44236" 
+                    Grid.Row="0"
+                    Grid.RowSpan="2" 
+                    Margin="8" 
+                    CornerRadius="8">
+                <Button x:Name="btnClose"
+                        Margin="3" 
+                        Background="Transparent"
+                        Opacity="0.5" 
+                        BorderBrush="Transparent" 
+                        Padding="2" 
+                        Click="btnClose_Click">
+                    <Image Source="/Images/close w1.png" 
+                           Width="15"
+                           Height="15"/>
+                </Button>
+            </Border>
+            <Label Name="lbTitel" 
+                   Grid.Row="0"
+                   Grid.Column="0"
+                   Margin="18,2,6,2"
+                   FlowDirection="RightToLeft" 
+                   FontSize="18" 
+                   FontWeight="Bold" FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" >Titel</Label>
+            <TextBlock x:Name="lbMessage"
+                       Grid.Row="1" 
+                       Grid.Column="0"
+                       Margin="11,4,5,4" 
+                       FontSize="15" 
+                       FlowDirection="RightToLeft"
+                       Foreground="WhiteSmoke"
+                       LineHeight="50"
+                       Padding="2" 
+                       TextTrimming="CharacterEllipsis" FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum"/>
+        </Grid>
+    </Border>
+</Window>

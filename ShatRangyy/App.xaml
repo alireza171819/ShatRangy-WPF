@@ -1,0 +1,31 @@
+﻿<Application x:Class="ShatRangyy.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ShatRangyy"
+             StartupUri="MainWindow.xaml">
+
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Dark.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignThemes.Wpf;component/Themes/MaterialDesignTheme.Defaults.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Primary/MaterialDesignColor.Blue.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/MaterialDesignColors;component/Themes/Recommended/Accent/MaterialDesignColor.Lime.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/ShatRangyy;component/Styles/DataGrid.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/ShatRangyy;component/Styles/DataGridSelector.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/ShatRangyy;component/Styles/CheckBox.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/ShatRangyy;component/Styles/Button.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/ShatRangyy;component/Styles/Tab.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/ShatRangyy;component/Styles/TextBox.xaml" />
+                <ResourceDictionary Source="pack://application:,,,/ShatRangyy;component/Styles/TextBox_Background_Border.xaml" />
+
+            </ResourceDictionary.MergedDictionaries>
+
+            <SolidColorBrush x:Key="TextBoxBackgroundColor" Color="#181A22"/>
+            <SolidColorBrush x:Key="MainColor" Color="#0097FE"/>
+            <SolidColorBrush x:Key="BakgrounColor" Color="#353944"/>
+            <SolidColorBrush x:Key="BorderBakgroundColor" Color="#242833"/>
+
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

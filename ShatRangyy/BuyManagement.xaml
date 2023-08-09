@@ -1,0 +1,721 @@
+﻿<UserControl x:Class="ShatRangyy.BuyManagement"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ShatRangyy"
+             xmlns:CustomControls="clr-namespace:ShatRangyy.CustomControls"
+             mc:Ignorable="d"
+             Height="660"
+             Width="1043" 
+             Loaded="UserControl_Loaded"
+             PreviewKeyDown="UserControl_PreviewKeyDown">
+    <Border x:Name="MainBorder"
+            CornerRadius="20" 
+            Background="{DynamicResource BakgrounColor}">
+        <Grid>
+            <!--#region Grid Rows & Clumns-->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="235"/>
+                <RowDefinition Height="105"/>
+                <RowDefinition Height="105"/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="104"/>
+                <ColumnDefinition Width="104"/>
+                <ColumnDefinition Width="104"/>
+                <ColumnDefinition Width="104"/>
+                <ColumnDefinition Width="104"/>
+            </Grid.ColumnDefinitions>
+            <!--#endregion-->
+
+            <Border Grid.Row="0" 
+                    Background="{DynamicResource BorderBakgroundColor}"
+                    Margin="10"
+                    CornerRadius="20"
+                    Name="BorderTop"
+                    Grid.ColumnSpan="10">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="1"
+                                      BlurRadius="20"
+                                      Opacity="0.5"/>
+                </Border.Effect>
+                <Grid>
+                    <!--#region Grid Rows & Clumns-->
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="25*"/>
+                        <ColumnDefinition Width="75"/>
+                        <ColumnDefinition Width="75"/>
+                        <ColumnDefinition Width="75"/>
+                        <ColumnDefinition Width="75"/>
+                        <ColumnDefinition Width="75"/>
+                        <ColumnDefinition Width="75"/>
+                        <ColumnDefinition Width="75"/>
+                        <ColumnDefinition Width="75"/>
+                        <ColumnDefinition Width="75"/>
+                        <ColumnDefinition Width="75"/>
+                        <ColumnDefinition Width="75"/>
+                        <ColumnDefinition Width="75"/>
+                        <ColumnDefinition Width="75"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition Height="35"/>
+                    </Grid.RowDefinitions>
+                    <!--#endregion-->
+
+                    <!--#region Buttons-->
+                    <Button x:Name="btnExit" 
+                            Grid.Column="13" 
+                            Grid.RowSpan="2"
+                            Margin="11,15,29,20"
+                            Width="NaN"
+                            Height="NaN"
+                            Click="btnExit_Click" 
+                            IsTabStop="False"
+                            Style="{StaticResource btnCricle}"
+                            ToolTip="ESC" TabIndex="17">
+                        <Image Source="/Images/001-close.png" 
+                               Width="17" Height="17"
+                               Stretch="Fill"/>
+                    </Button>
+                    <Button x:Name="btnDelete"
+                            Grid.Column="12" 
+                            Margin="33,28,0,0"
+                            Grid.Row="1" 
+                            Grid.RowSpan="3"
+                            Panel.ZIndex="8"
+                            Style="{StaticResource btnDocument}"
+                            ToolTip="F3"
+                            Grid.ColumnSpan="2"
+                            Width="55"
+                            Height="80"
+                            Click="btnDelete_Click" TabIndex="16">
+                        <DockPanel>
+                            <Image DockPanel.Dock="Top"
+                                   Source="/Images/document remove w2.png" 
+                                   Height="40" Width="40" 
+                                   Margin="2"/>
+                            <Label FontSize="13" 
+                                   FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" 
+                                   HorizontalContentAlignment="Center">حذف</Label>
+                        </DockPanel>
+                    </Button>
+                    <Button x:Name="btnEdite" 
+                            Grid.Column="11" 
+                            Grid.Row="1"
+                            Grid.RowSpan="3"
+                            Panel.ZIndex="9"
+                            Style="{StaticResource btnDocument}"
+                            ToolTip="F2"
+                            Grid.ColumnSpan="2"
+                            Margin="46,28,0,0"
+                            Width="54"
+                            Height="80"
+                            Click="btnEdite_Click" TabIndex="15">
+                        <DockPanel>
+                            <Image DockPanel.Dock="Top" 
+                                   Source="/Images/document edit w2.png" 
+                                   Height="40" Width="40" 
+                                   Margin="2"/>
+                            <Label FontSize="13" 
+                                   FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum"
+                                   HorizontalContentAlignment="Center">ویرایش</Label>
+                        </DockPanel>
+
+                    </Button>
+                    <Button x:Name="btnSave" 
+                            Grid.Column="10" 
+                            Margin="57,28,0,0" 
+                            Grid.Row="1" 
+                            Grid.RowSpan="3"
+                            Click="btnSave_Click"
+                            Panel.ZIndex="7"
+                            Grid.ColumnSpan="2"
+                            Style="{StaticResource btnDocument}"
+                            ToolTip="F1" TabIndex="14">
+                        <DockPanel>
+                            <Image DockPanel.Dock="Top" 
+                                   Source="/Images/document save w2.png" 
+                                   Height="40" Width="40"
+                                   Margin="2"/>
+                            <Label FontSize="13" 
+                                   FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" 
+                                   HorizontalContentAlignment="Center">ذخیره</Label>
+                        </DockPanel>
+                    </Button>
+                    <!--#endregion-->
+
+                    <!--#region TextBoxs-->
+                    <Border x:Name="SellerName_Border"
+                        Grid.ColumnSpan="4" 
+                        Grid.Column="10"
+                        Margin="65,14,37,11"
+                        Height="45"
+                        Style="{StaticResource TextBoxBackground}" 
+                        Grid.RowSpan="2"
+                        Grid.Row="4">
+                        <TextBox x:Name="txtSellerName"
+                             HorizontalAlignment="Left" 
+                             Height="35"
+                             Margin="15,-1,0,0" 
+                             Grid.Row="4" 
+                             VerticalAlignment="Top"
+                             Width="170" 
+                             
+                             Foreground="White" 
+                             BorderBrush="WhiteSmoke" 
+                             TextAlignment="Right" 
+                             Grid.RowSpan="2" 
+                             FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum"
+                             SelectionBrush="{DynamicResource MainColor}"
+                             CaretBrush="{DynamicResource MainColor}"
+                             FontSize="15" 
+                             MaxLength="50" 
+                             TextChanged="txtSellerName_TextChanged"
+                             KeyDown="txtSellerName_KeyDown" 
+                             Panel.ZIndex="6"
+                             ClipToBounds="True"
+                             HorizontalContentAlignment="Right"
+                             materialDesign:HintAssist.Hint="فروشنده"
+                             TabIndex="6"
+                             LostFocus="txtSellerName_LostFocus"
+                             ToolTip="F6"/>
+                    </Border>
+                    <Border x:Name="ItemName_Border"
+                        Grid.ColumnSpan="3"
+                        Grid.Column="8" 
+                        Grid.Row="4"
+                        Grid.RowSpan="2"
+                        Height="45"
+                        Margin="15,14,19,11"
+                        Style="{StaticResource TextBoxBackground}">
+                        <TextBox x:Name="txtItemName" 
+                             HorizontalAlignment="Center" 
+                             Height="35" 
+                             VerticalAlignment="Top" 
+                             Width="172" 
+                             Foreground="WhiteSmoke" 
+                             BorderBrush="WhiteSmoke" 
+                             TextAlignment="Right"
+                             FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" 
+                             CaretBrush="{DynamicResource MainColor}" 
+                             SelectionBrush="{StaticResource MainColor}"
+                             FontSize="15" 
+                             MaxLength="80"
+                             KeyDown="txtItemName_KeyDown"
+                             Panel.ZIndex="5"
+                             ClipToBounds="True"
+                             Margin="0,-1,0,0"
+                             HorizontalContentAlignment="Right"
+                             materialDesign:HintAssist.Hint="کالا"
+                             TabIndex="5"/>
+                    </Border>
+                    <Border x:Name="Number_Border"
+                        Grid.Column="7" 
+                        Margin="6,14,66,11" 
+                        Grid.Row="4"
+                        Grid.RowSpan="2" 
+                        Height="45"
+                        Style="{StaticResource TextBoxBackground}" Grid.ColumnSpan="2">
+                        <TextBox x:Name="txtNumber" 
+                             HorizontalAlignment="Left" 
+                             Height="35" 
+                             VerticalAlignment="Top"
+                             Width="60" 
+                             
+                             Foreground="White" 
+                             BorderBrush="WhiteSmoke" 
+                             TextAlignment="Right"
+                             FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum"
+                             CaretBrush="{DynamicResource MainColor}" 
+                             SelectionBrush="{DynamicResource MainColor}"
+                             FontSize="15"
+                             MaxLength="4"
+                             Panel.ZIndex="4"
+                             ClipToBounds="True"
+                             Margin="9,-1,0,0"
+                             HorizontalContentAlignment="Right"
+                             materialDesign:HintAssist.Hint="تعداد"
+                             PreviewTextInput="AllTextBox_PreviewTextInput"
+                             KeyDown="txtNumber_KeyDown" TabIndex="4"/>
+                    </Border>
+                    <Border x:Name="Price_Border"
+                        Grid.ColumnSpan="2"
+                        Grid.Column="5"
+                        Margin="16,13,2,12" 
+                        Grid.Row="4"
+                        Grid.RowSpan="2" 
+                        Height="45"
+                        Style="{StaticResource TextBoxBackground}">
+                        <TextBox x:Name="txtPrice"
+                             Foreground="WhiteSmoke"
+                             HorizontalAlignment="Center"
+                             Height="35"
+                             Width="115"
+                             TextAlignment="Right" 
+                             BorderBrush="WhiteSmoke" 
+                             FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum"
+                             SelectionBrush="{DynamicResource MainColor}"  
+                             FontSize="15" 
+                             MaxLength="15"
+                             TextChanged="txtPrice_TextChanged" 
+                             Panel.ZIndex="3"
+                             ClipToBounds="True"
+                             Margin="0,-1,0,0"
+                             HorizontalContentAlignment="Right"
+                             materialDesign:HintAssist.Hint="قیمت"
+                             PreviewTextInput="AllTextBox_PreviewTextInput"
+                             KeyDown="txtPrice_KeyDown" TabIndex="3" VerticalAlignment="Top"/>
+                    </Border>
+                    <Border x:Name="Costs_Border"
+                        Grid.ColumnSpan="3" 
+                        Grid.Column="3" 
+                        Margin="11,13,66,12" 
+                        Grid.Row="4" 
+                        Grid.RowSpan="2"
+                        Height="45"
+                        Style="{StaticResource TextBoxBackground}">
+                        <TextBox x:Name="txtCosts" 
+                             Width="130"
+                             Height="35"
+                             
+                             Foreground="WhiteSmoke"
+                             BorderBrush="WhiteSmoke" 
+                             TextAlignment="Right"
+                             FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" 
+                             SelectionBrush="{DynamicResource MainColor}" 
+                             FontSize="15"
+                             MaxLength="15"
+                             TextChanged="txtCosts_TextChanged"
+                             Panel.ZIndex="2"
+                             ClipToBounds="True"
+                             Margin="9,-1,7,9"
+                             HorizontalContentAlignment="Right"
+                             materialDesign:HintAssist.Hint="مخارج"
+                             PreviewTextInput="AllTextBox_PreviewTextInput"
+                             KeyDown="txtCosts_KeyDown" TabIndex="2" VerticalAlignment="Top" HorizontalAlignment="Center"/>
+                    </Border>
+                    <Border x:Name="TotalPrice_Border"
+                        Grid.ColumnSpan="3"
+                        Margin="5,13,70,12"
+                        Grid.Row="4" 
+                        Grid.RowSpan="2" 
+                        Grid.Column="1"
+                        Height="45"
+                        Style="{StaticResource TextBoxBackground}">
+                        <TextBox x:Name="txtTotalPrice"
+                             Width="130"
+                             Height="35"
+                             Foreground="WhiteSmoke"
+                             BorderBrush="WhiteSmoke"
+                             TextAlignment="Right" 
+                             FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum"
+                             SelectionBrush="{DynamicResource MainColor}" 
+                             FontSize="15"
+                             MaxLength="15"
+                             TextChanged="txtTotalPrice_TextChanged" 
+                             Panel.ZIndex="1" 
+                             ClipToBounds="True"
+                             Margin="9,-1,9,9"
+                             HorizontalContentAlignment="Right"
+                             materialDesign:HintAssist.Hint="بهای کل"
+                             PreviewTextInput="AllTextBox_PreviewTextInput"
+                             KeyDown="txtTotalPrice_KeyDown"
+                             TabIndex="1"
+                             GotKeyboardFocus="txtTotalPrice_GotKeyboardFocus"/>
+                    </Border>
+                    <TextBox x:Name="txtShowDay" 
+                             Grid.Column="2" 
+                             HorizontalAlignment="Left" 
+                             Height="30"
+                             Margin="58,30,0,0" 
+                             TextWrapping="Wrap" 
+                             Text="44" 
+                             VerticalAlignment="Top"
+                             Width="44"
+                             Foreground="White"
+                             BorderBrush="WhiteSmoke"
+                             TextAlignment="Right" 
+                             Grid.RowSpan="2" 
+                             FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum"
+                             CaretBrush="{StaticResource MainColor}" 
+                             SelectionBrush="{StaticResource MainColor}"
+                             FontSize="15" 
+                             MaxLength="2" 
+                             Panel.ZIndex="14"
+                             Grid.ColumnSpan="2"
+                             ClipToBounds="True"
+                             HorizontalContentAlignment="Right"
+                             materialDesign:HintAssist.Hint="روز"
+                             PreviewTextInput="AllTextBox_PreviewTextInput" TabIndex="9"/>
+                    <TextBox x:Name="txtShowMonth" 
+                             Grid.Column="2" 
+                             HorizontalAlignment="Left"
+                             Height="30"
+                             Margin="3,30,0,0"
+                             TextWrapping="Wrap"
+                             Text="12" 
+                             VerticalAlignment="Top" 
+                             Width="46"
+                             Foreground="White"
+                             BorderBrush="WhiteSmoke"
+                             TextAlignment="Right"
+                             Grid.RowSpan="2"
+                             FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum"
+                             CaretBrush="{StaticResource MainColor}" 
+                             SelectionBrush="{StaticResource MainColor}"
+                             FontSize="15"
+                             MaxLength="2" 
+                             Panel.ZIndex="13"
+                             ClipToBounds="True"
+                             HorizontalContentAlignment="Right"
+                             materialDesign:HintAssist.Hint="ماه"
+                             PreviewTextInput="AllTextBox_PreviewTextInput" TabIndex="8"/>
+                    <TextBox x:Name="txtShowYear"
+                             Height="30"
+                             Margin="5,30,6,0" 
+                             TextWrapping="Wrap" 
+                             Text="1403"
+                             VerticalAlignment="Top"
+                             Foreground="White" 
+                             BorderBrush="WhiteSmoke" 
+                             TextAlignment="Right" 
+                             Grid.RowSpan="2"
+                             FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" 
+                             CaretBrush="{StaticResource MainColor}" 
+                             SelectionBrush="{StaticResource MainColor}" 
+                             FontSize="15"
+                             MaxLength="4" 
+                             Panel.ZIndex="12" 
+                             Grid.Column="1"
+                             ClipToBounds="True"
+                             HorizontalContentAlignment="Right"
+                             materialDesign:HintAssist.Hint="سال"
+                             PreviewTextInput="AllTextBox_PreviewTextInput" TabIndex="7"/>
+                    <TextBox x:Name="txtSearchDay"
+                             Grid.Column="7"
+                             HorizontalAlignment="Left"
+                             Height="35"
+                             Margin="47,28,0,0"
+                             Grid.Row="1" 
+                             VerticalAlignment="Top"
+                             Width="44"
+                             Foreground="White"
+                             BorderBrush="WhiteSmoke"
+                             TextAlignment="Right" 
+                             Grid.RowSpan="2"
+                             FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" 
+                             CaretBrush="{DynamicResource MainColor}" 
+                             SelectionBrush="{DynamicResource MainColor}" FontSize="15"
+                             MaxLength="2" 
+                             Panel.ZIndex="17"
+                             Grid.ColumnSpan="2"
+                             ClipToBounds="True"
+                             HorizontalContentAlignment="Right"
+                             materialDesign:HintAssist.Hint="روز"
+                             PreviewTextInput="AllTextBox_PreviewTextInput"
+                             KeyDown="txtSearchDay_KeyDown"
+                             TabIndex="12"/>
+                    <TextBox x:Name="txtSearchMonth"
+                             Grid.Column="6"
+                             HorizontalAlignment="Left"
+                             Height="35" 
+                             Margin="69,28,0,0" 
+                             Grid.Row="1"
+                             VerticalAlignment="Top" 
+                             Width="46"
+                             Foreground="White" 
+                             BorderBrush="WhiteSmoke" 
+                             TextAlignment="Right" 
+                             Grid.RowSpan="2" 
+                             FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum"
+                             CaretBrush="{DynamicResource MainColor}" 
+                             SelectionBrush="{DynamicResource MainColor}" 
+                             FontSize="15" 
+                             Panel.ZIndex="16"
+                             MaxLength="2" 
+                             Grid.ColumnSpan="2"
+                             ClipToBounds="True"
+                             HorizontalContentAlignment="Right"
+                             materialDesign:HintAssist.Hint="ماه"
+                             PreviewTextInput="AllTextBox_PreviewTextInput"
+                             KeyDown="txtSearchMonth_KeyDown"
+                             TabIndex="11"/>
+                    <TextBox x:Name="txtSearchYear" 
+                             HorizontalAlignment="Left"
+                             Height="35" 
+                             Margin="72,28,0,0"
+                             Grid.Row="1" 
+                             VerticalAlignment="Top"
+                             Width="64"
+                             Foreground="White" 
+                             BorderBrush="WhiteSmoke" 
+                             TextAlignment="Right" 
+                             Grid.Column="5" 
+                             Grid.RowSpan="2"
+                             FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum"
+                             CaretBrush="{DynamicResource MainColor}" 
+                             SelectionBrush="{DynamicResource MainColor}"
+                             FontSize="15"
+                             MaxLength="4"
+                             Cursor="Arrow"
+                             Panel.ZIndex="15"
+                             Grid.ColumnSpan="2"
+                             ClipToBounds="True"
+                             HorizontalContentAlignment="Right"
+                             materialDesign:HintAssist.Hint="سال"
+                             PreviewTextInput="AllTextBox_PreviewTextInput"
+                             KeyDown="txtSearchYear_KeyDown"
+                             TabIndex="10"/>
+                    <TextBox x:Name="txtSearch"
+                             Grid.ColumnSpan="4"
+                             Grid.Column="5"
+                             HorizontalAlignment="Left"
+                             Height="35" 
+                             Margin="52,10,0,0"
+                             VerticalAlignment="Top" 
+                             Width="200"
+                             Foreground="White" 
+                             BorderBrush="WhiteSmoke" 
+                             TextAlignment="Right" 
+                             Grid.RowSpan="2"
+                             FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum"
+                             CaretBrush="{DynamicResource MainColor}"
+                             SelectionBrush="{DynamicResource MainColor}" 
+                             FontSize="15"
+                             MaxLength="80" 
+                             Panel.ZIndex="18" 
+                             ClipToBounds="True"
+                             HorizontalContentAlignment="Right"
+                             materialDesign:HintAssist.Hint="جستوجو"
+                             ToolTip="F5" 
+                             TabIndex="13"
+                             KeyDown="txtSearch_KeyDown"/>
+                    <TextBox x:Name="txtSearchFromAmount"
+                        Grid.Column="7"
+                        HorizontalAlignment="Left"
+                        Height="35" 
+                        Margin="10,10,0,0"
+                        VerticalAlignment="Top" 
+                        Width="164"
+                        Foreground="White" 
+                        BorderBrush="WhiteSmoke" 
+                        TextAlignment="Right" 
+                        Grid.RowSpan="2"
+                        FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum"
+                        CaretBrush="{DynamicResource MainColor}"
+                        SelectionBrush="{DynamicResource MainColor}" 
+                        FontSize="15"
+                        MaxLength="20" 
+                        Panel.ZIndex="18" 
+                        ClipToBounds="True"
+                        HorizontalContentAlignment="Right"
+                        materialDesign:HintAssist.Hint="از مبلغ"
+                        ToolTip="F5"
+                        Grid.ColumnSpan="3"
+                        Visibility="Hidden"
+                        TextChanged="txtSearchFromAmount_TextChanged"
+                        KeyDown="txtSearchFromAmount_KeyDown"/>
+                    <TextBox x:Name="txtSearchToAmount"
+                        Grid.Column="4"
+                        HorizontalAlignment="Left"
+                        Height="35" 
+                        Margin="48,10,0,0"
+                        VerticalAlignment="Top" 
+                        Width="164"
+                        Foreground="White" 
+                        BorderBrush="WhiteSmoke" 
+                        TextAlignment="Right" 
+                        Grid.RowSpan="2"
+                        FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum"
+                        CaretBrush="{DynamicResource MainColor}"
+                        SelectionBrush="{DynamicResource MainColor}" 
+                        FontSize="15"
+                        MaxLength="20" 
+                        Panel.ZIndex="18" 
+                        ClipToBounds="True"
+                        HorizontalContentAlignment="Right"
+                        materialDesign:HintAssist.Hint="تا مبلغ"
+                        ToolTip="F5"
+                        Grid.ColumnSpan="3"
+                        Visibility="Hidden"
+                        TextChanged="txtSearchToAmount_TextChanged"
+                        KeyDown="txtSearchToAmount_KeyDown"/>
+                    <!--#endregion-->
+
+                    <!--#region Labels-->
+                    <Label Content="مدیریت خرید"
+                           Grid.ColumnSpan="3"
+                           Grid.Column="11"
+                           HorizontalAlignment="Left"
+                           Margin="4,14,0,0"
+                           VerticalAlignment="Top"
+                           FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" 
+                           FontWeight="ExtraBold"
+                           FontSize="22"
+                           Height="40"
+                           Grid.RowSpan="2"
+                           Foreground="#DDECECEC" 
+                           Width="148"/>
+                    <Label Content="/" 
+                           Foreground="WhiteSmoke" 
+                           FontSize="14"
+                           FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" 
+                           Width="15" 
+                           Margin="49,34,11,1" 
+                           Grid.Column="2" 
+                           Grid.RowSpan="2"/>
+                    <Label Content="/"
+                           Foreground="WhiteSmoke" 
+                           FontSize="14" 
+                           FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum"
+                           Width="15"
+                           Margin="71,34,64,1" 
+                           Grid.Column="1"
+                           Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+                    <!--#endregion-->
+
+                    <!--#region CheckBox-->
+                    <CheckBox x:Name="SellCash"
+                              Margin="8,21,43,21"
+                              Content="نقد"
+                              FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum"
+                              Style="{DynamicResource CheckBox_Custom}"
+                              Foreground="WhiteSmoke"
+                              IsChecked="True"
+                              Grid.Column="1"
+                              Grid.RowSpan="2"
+                              Grid.Row="2" 
+                              Height="30"
+                              Click="SellCash_Click"/>
+                    <CheckBox x:Name="SellCredit"
+                              Margin="5,21,48,21"
+                              FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum"
+                              Style="{DynamicResource CheckBox_Custom}"
+                              Foreground="WhiteSmoke"
+                              IsChecked="False"
+                              Grid.Column="2"
+                              Grid.RowSpan="2" 
+                              Grid.Row="2"
+                              Height="30"
+                              Click="SellCredit_Click"/>
+                    <Label x:Name="lbCredit" Content="نسیه"
+                        HorizontalAlignment="Left"
+                        HorizontalContentAlignment="Right"
+                        VerticalAlignment="Center"
+                        Width="37"
+                        Grid.Row="2"
+                        Height="24"
+                        Margin="27,0,0,0"
+                        FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" Grid.Column="2" Grid.RowSpan="2"/>
+                    <Label x:Name="lbCash" Content="نقدی"
+                        HorizontalAlignment="Left"
+                        HorizontalContentAlignment="Right"
+                        VerticalAlignment="Center"
+                        Width="37"
+                        Grid.Row="2"
+                        Height="24"
+                        Margin="29,0,0,0"
+                        FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" Grid.Column="1" Grid.RowSpan="2"/>
+
+                    <!--#endregion-->
+                </Grid>
+            </Border>
+            <Border Grid.Row="1" 
+                    Background="{DynamicResource BorderBakgroundColor}" 
+                    Margin="10"
+                    CornerRadius="20"
+                    Name="BorderBottom" 
+                    Grid.ColumnSpan="10"
+                    Grid.RowSpan="4">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="1"
+                                      Opacity="0.5"
+                                      BlurRadius="20"/>
+                </Border.Effect>
+                <!--Tabel-->
+                <DataGrid Name="DGV" 
+                          Style="{StaticResource DataGrid_Documents}" 
+                          ColumnHeaderHeight="42"
+                          Margin="2" 
+                          FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum"
+                          FontWeight="DemiBold"
+                          FontSize="15"
+                          SelectionChanged="DGV_SelectionChanged" >
+                    <DataGrid.Columns>
+                        <DataGridTextColumn FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" 
+                                            FontSize="14"
+                                            FontWeight="Normal"
+                                            Width="80*"
+                                            Header="سریال"
+                                            Binding="{Binding ID}"></DataGridTextColumn>
+                        <DataGridTextColumn FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" 
+                                            FontSize="14" 
+                                            FontWeight="Normal" 
+                                            Width="100*"
+                                            Header="تاریخ"
+                                            Binding="{Binding Date}"></DataGridTextColumn>
+                        <DataGridTextColumn FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum"
+                                            FontSize="14" 
+                                            FontWeight="Normal"
+                                            Width="180*" 
+                                            Header="فروشنده" 
+                                            Binding="{Binding SellerName}"></DataGridTextColumn>
+                        <DataGridTextColumn FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" 
+                                            FontSize="14" 
+                                            FontWeight="Normal"
+                                            Width="180*"
+                                            Header="کالا" 
+                                            Binding="{Binding ItemName}"></DataGridTextColumn>
+                        <DataGridTextColumn FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum"
+                                            FontSize="14"
+                                            FontWeight="Normal"
+                                            Width="100*" 
+                                            Header="تعداد" 
+                                            Binding="{Binding Number}"></DataGridTextColumn>
+                        <DataGridTextColumn FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum"
+                                            FontSize="14"
+                                            FontWeight="Normal"
+                                            Width="130*" 
+                                            Header="قیمت" 
+                                            Binding="{Binding Price , StringFormat={}{0:n0}}"/>
+                        <DataGridTextColumn FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum"
+                                            FontSize="14"
+                                            FontWeight="Normal"
+                                            Width="130*"
+                                            Header="مخارج"
+                                            Binding="{Binding Costs , StringFormat={}{0:n0}}"/>
+                        <DataGridTextColumn FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" 
+                                            FontSize="14" 
+                                            FontWeight="Normal" 
+                                            Width="140*" 
+                                            Header="بهای کل"
+                                            Binding="{Binding TotalPrice , StringFormat={}{0:n0}}"/>
+                    </DataGrid.Columns>
+
+                </DataGrid>
+            </Border>
+            <local:AccountSelector x:Name="Account_Selector"
+                Grid.Column="7"
+                HorizontalAlignment="Left"
+                Margin="66,220,0,0"
+                VerticalAlignment="Top"
+                Grid.ColumnSpan="3"
+                Grid.RowSpan="3"
+                Visibility="Hidden"/>
+        </Grid>
+    </Border>
+</UserControl>

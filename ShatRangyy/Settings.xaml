@@ -1,0 +1,78 @@
+﻿<UserControl x:Class="ShatRangyy.Settings"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ShatRangyy"
+             mc:Ignorable="d" 
+                       Height="590"
+             Width="1050">
+    <Border x:Name="MainBorder"
+            Background="{StaticResource BakgrounColor}"
+            CornerRadius="20">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="43*"></RowDefinition>
+                <RowDefinition Height="252*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <Border x:Name="TopBorder"
+                    Background="{StaticResource BorderBakgroundColor}"
+                    Margin="10,10,10,10"
+                    CornerRadius="20"
+                    Grid.Row="0">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="1"
+                                      BlurRadius="20"
+                                      Opacity="0.5"/>
+                </Border.Effect>
+                <Grid>
+                    <Label Content="تنظیمات"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Center"
+                        FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" 
+                        FontWeight="ExtraBold"
+                        FontSize="22"
+                        Height="40"
+                        Foreground="#DDECECEC" 
+                        Width="92" Margin="849,0,0,0"/>
+                    <!--#endregion-->
+
+                    <Button x:Name="btnExit"
+                        Margin="964,15,31,16"
+                        Width="NaN"
+                        Height="NaN"
+                        Click="btnExit_Click"
+                        IsTabStop="False"
+                        Style="{StaticResource btnCricle}"
+                        ToolTip="ESC" 
+                        TabIndex="17">
+                        <Image Source="/Images/001-close.png" 
+                            Width="17" Height="17"
+                            Stretch="Fill"/>
+                    </Button>
+
+                </Grid>
+            </Border>
+            <TabControl x:Name="TabControlSettings" 
+                        Style="{StaticResource ShatRangy_TabControlStyle}"
+                        Grid.Row="1">
+                <TabItem Header="مدیرت کاربران"
+                         Style="{StaticResource ShatRangy_TabItem}">
+                    
+                </TabItem>
+                <TabItem Header="مدیرت کاربران"
+                         Style="{StaticResource ShatRangy_TabItem}">
+
+                </TabItem>
+                <TabItem Header="مدیرت کاربران"
+                         Style="{StaticResource ShatRangy_TabItem}">
+
+                </TabItem>
+                <TabItem Header="مدیرت کاربران"
+                         Style="{StaticResource ShatRangy_TabItem}">
+
+                </TabItem>
+            </TabControl>
+        </Grid>
+    </Border>
+</UserControl>

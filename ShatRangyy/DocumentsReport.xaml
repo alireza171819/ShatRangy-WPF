@@ -1,0 +1,516 @@
+﻿<UserControl x:Class="ShatRangyy.DocumentsReport"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ShatRangyy"
+            xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes" 
+             mc:Ignorable="d" 
+             Height="590"
+             Width="1050">
+    <Border x:Name="MainBorder"
+            Background="{StaticResource BakgrounColor}"
+            CornerRadius="20">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="181"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Border x:Name="TopBorder"
+                    Background="{StaticResource BorderBakgroundColor}"
+                    Margin="10,10,10,10"
+                    CornerRadius="20"
+                    Grid.Row="0">
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="1"
+                                      Opacity="0.5"
+                                      BlurRadius="20"/>
+                </Border.Effect>
+                <Grid>
+                    <!--#region Grid Rows & Clumns-->
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="25*"/>
+                        <ColumnDefinition Width="75"/>
+                        <ColumnDefinition Width="75"/>
+                        <ColumnDefinition Width="75"/>
+                        <ColumnDefinition Width="75"/>
+                        <ColumnDefinition Width="75"/>
+                        <ColumnDefinition Width="75"/>
+                        <ColumnDefinition Width="75"/>
+                        <ColumnDefinition Width="75"/>
+                        <ColumnDefinition Width="75"/>
+                        <ColumnDefinition Width="75"/>
+                        <ColumnDefinition Width="75"/>
+                        <ColumnDefinition Width="75"/>
+                        <ColumnDefinition Width="75"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition Height="35"/>
+                    </Grid.RowDefinitions>
+                    <!--#endregion-->
+
+                    <!--#region TextBoxs-->
+                    <TextBox x:Name="txtSearch"
+                           HorizontalAlignment="Center"
+                           Height="35"
+                           VerticalAlignment="Top" 
+                           Width="200"
+                           Foreground="White" 
+                           BorderBrush="WhiteSmoke" 
+                           TextAlignment="Right"
+                           FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum"
+                           CaretBrush="{DynamicResource MainColor}"
+                           SelectionBrush="{DynamicResource MainColor}" 
+                           FontSize="15"
+                           MaxLength="100" 
+                           Panel.ZIndex="18" 
+                           ClipToBounds="True"
+                           HorizontalContentAlignment="Right"
+                           materialDesign:HintAssist.Hint="جستوجو در نام حساب"
+                           TabIndex="13"
+                           KeyDown="txtSearch_KeyDown"
+                           Margin="0,18,0,0" 
+                           Grid.Column="5" 
+                           Grid.ColumnSpan="4"
+                           Grid.RowSpan="2"/>
+                    <TextBox x:Name="txtSearchToDay"
+                        Grid.Column="5"
+                        HorizontalAlignment="Left"
+                        Height="35"
+                        Margin="59,23,0,0"
+                        Grid.Row="2" 
+                        VerticalAlignment="Top"
+                        Width="44"
+                        Foreground="White"
+                        BorderBrush="WhiteSmoke"
+                        TextAlignment="Right" 
+                        Grid.RowSpan="2"
+                        FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" 
+                        CaretBrush="{DynamicResource MainColor}" 
+                        SelectionBrush="{DynamicResource MainColor}" FontSize="15"
+                        MaxLength="2" 
+                        Panel.ZIndex="17"
+                        Grid.ColumnSpan="2"
+                        ClipToBounds="True"
+                        HorizontalContentAlignment="Right"
+                        materialDesign:HintAssist.Hint="روز"
+                        PreviewTextInput="AllTextBox_PreviewTextInput"
+                        KeyDown="txtSearchToDay_KeyDown"
+                        TabIndex="12"/>
+                    <TextBox x:Name="txtSearchToMonth"
+                        Grid.Column="5"
+                        HorizontalAlignment="Left"
+                        Height="35" 
+                        Margin="6,23,0,0" 
+                        Grid.Row="2"
+                        VerticalAlignment="Top" 
+                        Width="46"
+                        Foreground="White" 
+                        BorderBrush="WhiteSmoke" 
+                        TextAlignment="Right" 
+                        Grid.RowSpan="2" 
+                        FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum"
+                        CaretBrush="{DynamicResource MainColor}" 
+                        SelectionBrush="{DynamicResource MainColor}" 
+                        FontSize="15" 
+                        Panel.ZIndex="16"
+                        MaxLength="2"
+                        ClipToBounds="True"
+                        HorizontalContentAlignment="Right"
+                        materialDesign:HintAssist.Hint="ماه"
+                        PreviewTextInput="AllTextBox_PreviewTextInput"
+                        KeyDown="txtSearchToMonth_KeyDown"
+                        TabIndex="11"/>
+                    <TextBox x:Name="txtSearchToYear" 
+                        HorizontalAlignment="Left"
+                        Height="35" 
+                        Margin="9,23,0,0"
+                        Grid.Row="2" 
+                        VerticalAlignment="Top"
+                        Width="64"
+                        Foreground="White" 
+                        BorderBrush="WhiteSmoke" 
+                        TextAlignment="Right" 
+                        Grid.Column="4" 
+                        Grid.RowSpan="2"
+                        FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum"
+                        CaretBrush="{DynamicResource MainColor}" 
+                        SelectionBrush="{DynamicResource MainColor}"
+                        FontSize="15"
+                        MaxLength="4"
+                        Cursor="Arrow"
+                        Panel.ZIndex="15"
+                        ClipToBounds="True"
+                        HorizontalContentAlignment="Right"
+                        materialDesign:HintAssist.Hint="سال"
+                        PreviewTextInput="AllTextBox_PreviewTextInput"
+                        KeyDown="txtSearchToYear_KeyDown"
+                        TabIndex="10"/>
+                    <TextBox x:Name="txtSearchFromDay"
+                        Grid.Column="9"
+                        HorizontalAlignment="Center"
+                        Height="35"
+                        Margin="0,23,0,0"
+                        Grid.Row="2" 
+                        VerticalAlignment="Top"
+                        Width="44"
+                        Foreground="White"
+                        BorderBrush="WhiteSmoke"
+                        TextAlignment="Right" 
+                        Grid.RowSpan="2"
+                        FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" 
+                        CaretBrush="{DynamicResource MainColor}" 
+                        SelectionBrush="{DynamicResource MainColor}" FontSize="15"
+                        MaxLength="2" 
+                        Panel.ZIndex="17"
+                        ClipToBounds="True"
+                        HorizontalContentAlignment="Right"
+                        materialDesign:HintAssist.Hint="روز"
+                        PreviewTextInput="AllTextBox_PreviewTextInput"
+                        KeyDown="txtSearchFromDay_KeyDown"
+                        TabIndex="12"/>
+                    <TextBox x:Name="txtSearchFromMonth"
+                        Grid.Column="8"
+                        HorizontalAlignment="Left"
+                        Height="35" 
+                        Margin="37,23,0,0" 
+                        Grid.Row="2"
+                        VerticalAlignment="Top" 
+                        Width="46"
+                        Foreground="White" 
+                        BorderBrush="WhiteSmoke" 
+                        TextAlignment="Right" 
+                        Grid.RowSpan="2" 
+                        FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum"
+                        CaretBrush="{DynamicResource MainColor}" 
+                        SelectionBrush="{DynamicResource MainColor}" 
+                        FontSize="15" 
+                        Panel.ZIndex="16"
+                        MaxLength="2"
+                        ClipToBounds="True"
+                        HorizontalContentAlignment="Right"
+                        materialDesign:HintAssist.Hint="ماه"
+                        PreviewTextInput="AllTextBox_PreviewTextInput"
+                        KeyDown="txtSearchFromMonth_KeyDown"
+                        TabIndex="11" Grid.ColumnSpan="2"/>
+                    <TextBox x:Name="txtSearchFromYear" 
+                        HorizontalAlignment="Left"
+                        Height="35" 
+                        Margin="40,23,0,0"
+                        Grid.Row="2" 
+                        VerticalAlignment="Top"
+                        Width="64"
+                        Foreground="White" 
+                        BorderBrush="WhiteSmoke" 
+                        TextAlignment="Right" 
+                        Grid.Column="7" 
+                        Grid.RowSpan="2"
+                        FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum"
+                        CaretBrush="{DynamicResource MainColor}" 
+                        SelectionBrush="{DynamicResource MainColor}"
+                        FontSize="15"
+                        MaxLength="4"
+                        Cursor="Arrow"
+                        Panel.ZIndex="15"
+                        ClipToBounds="True"
+                        HorizontalContentAlignment="Right"
+                        materialDesign:HintAssist.Hint="سال"
+                        PreviewTextInput="AllTextBox_PreviewTextInput"
+                        KeyDown="txtSearchFromYear_KeyDown"
+                        TabIndex="10" Grid.ColumnSpan="2"/>
+                    <!--#endregion-->
+
+                    <!--#region Labels-->
+                    <Label Content=": از تاریخ"
+                        Grid.Column="9"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" 
+                        FontWeight="SemiBold"
+                        FontSize="15"
+                        Height="30"
+                        Foreground="#DDECECEC" 
+                        Width="74" Margin="68,28,0,0" Grid.Row="2" Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+                    <Label Content=": تا تاریخ"
+                        Grid.ColumnSpan="2"
+                        Grid.Column="6"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" 
+                        FontWeight="SemiBold"
+                        FontSize="15"
+                        Height="30"
+                        Foreground="#DDECECEC" 
+                        Width="74" Margin="35,28,0,0" Grid.Row="2" Grid.RowSpan="2"/>
+                    <Label Content="گزارش اسناد"
+                        Grid.ColumnSpan="2"
+                        Grid.Column="11"
+                        HorizontalAlignment="Left"
+                        VerticalAlignment="Top"
+                        FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" 
+                        FontWeight="ExtraBold"
+                        FontSize="22"
+                        Height="40"
+                        Grid.RowSpan="2"
+                        Foreground="#DDECECEC" 
+                        Width="120" Margin="30,14,0,0"/>
+                    <!--#endregion-->
+
+                    <Button x:Name="btnExit" 
+                        Grid.Column="13" 
+                        Grid.RowSpan="2"
+                        Margin="9,15,31,13"
+                        Width="NaN"
+                        Height="NaN"
+                        Click="btnExit_Click"
+                        IsTabStop="False"
+                        Style="{StaticResource btnCricle}"
+                        ToolTip="ESC" TabIndex="17">
+                        <Image Source="/Images/001-close.png" 
+                            Width="17" Height="17"
+                            Stretch="Fill"/>
+                    </Button>
+
+                </Grid>
+            </Border>
+            <TabControl x:Name="TabControlDocuments" 
+                        Style="{StaticResource ShatRangy_TabControlStyle}"
+                        Grid.Row="1">
+                <TabItem Header="اسناد خرید"
+                         Style="{StaticResource ShatRangy_TabItem}">
+                    <DataGrid Name="DGV_BuyDocument" 
+                          Style="{StaticResource DataGrid_Documents}" 
+                          ColumnHeaderHeight="42"
+                          Margin="2" 
+                          FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum"
+                          FontWeight="DemiBold"
+                          FontSize="15">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" 
+                                            FontSize="14"
+                                            FontWeight="Normal"
+                                            Width="80*"
+                                            Header="سریال"
+                                            Binding="{Binding ID}"></DataGridTextColumn>
+                            <DataGridTextColumn FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" 
+                                            FontSize="14" 
+                                            FontWeight="Normal" 
+                                            Width="100*"
+                                            Header="تاریخ"
+                                            Binding="{Binding Date}"></DataGridTextColumn>
+                            <DataGridTextColumn FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum"
+                                            FontSize="14" 
+                                            FontWeight="Normal"
+                                            Width="180*" 
+                                            Header="فروشنده" 
+                                            Binding="{Binding SellerName}"></DataGridTextColumn>
+                            <DataGridTextColumn FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" 
+                                            FontSize="14" 
+                                            FontWeight="Normal"
+                                            Width="180*"
+                                            Header="کالا" 
+                                            Binding="{Binding ItemName}"></DataGridTextColumn>
+                            <DataGridTextColumn FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum"
+                                            FontSize="14"
+                                            FontWeight="Normal"
+                                            Width="100*" 
+                                            Header="تعداد" 
+                                            Binding="{Binding Number}"></DataGridTextColumn>
+                            <DataGridTextColumn FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum"
+                                            FontSize="14"
+                                            FontWeight="Normal"
+                                            Width="130*" 
+                                            Header="قیمت" 
+                                            Binding="{Binding Price , StringFormat={}{0:n0}}"/>
+                            <DataGridTextColumn FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum"
+                                            FontSize="14"
+                                            FontWeight="Normal"
+                                            Width="130*"
+                                            Header="مخارج"
+                                            Binding="{Binding Costs , StringFormat={}{0:n0}}"/>
+                            <DataGridTextColumn FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" 
+                                            FontSize="14" 
+                                            FontWeight="Normal" 
+                                            Width="140*" 
+                                            Header="بهای کل"
+                                            Binding="{Binding TotalPrice , StringFormat={}{0:n0}}"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </TabItem>
+                <TabItem Header="اسناد فروش"
+                         Style="{StaticResource ShatRangy_TabItem}">
+                    <DataGrid x:Name="DGV_SellDocument" 
+                          Style="{StaticResource DataGrid_Documents}" 
+                          ColumnHeaderHeight="42"
+                          Margin="2" 
+                          FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" 
+                          FontSize="15" 
+                          BorderThickness="0">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" 
+                                            FontSize="14"
+                                            FontWeight="Normal"
+                                            Width="80*"
+                                            Header="سریال"
+                                            Binding="{Binding ID}"></DataGridTextColumn>
+                            <DataGridTextColumn FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" 
+                                            FontSize="14" 
+                                            FontWeight="Normal" 
+                                            Width="100*"
+                                            Header="تاریخ"
+                                            Binding="{Binding Date}"></DataGridTextColumn>
+                            <DataGridTextColumn FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum"
+                                            FontSize="14" 
+                                            FontWeight="Normal"
+                                            Width="180*" 
+                                            Header="خریدار" 
+                                            Binding="{Binding BuyerName}"></DataGridTextColumn>
+                            <DataGridTextColumn FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" 
+                                            FontSize="14" 
+                                            FontWeight="Normal"
+                                            Width="180*"
+                                            Header="کالا" 
+                                            Binding="{Binding ItemName}"></DataGridTextColumn>
+                            <DataGridTextColumn FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum"
+                                            FontSize="14"
+                                            FontWeight="Normal"
+                                            Width="100*" 
+                                            Header="تعداد" 
+                                            Binding="{Binding Number}"></DataGridTextColumn>
+                            <DataGridTextColumn FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum"
+                                            FontSize="14"
+                                            FontWeight="Normal"
+                                            Width="130*" 
+                                            Header="قیمت" 
+                                            Binding="{Binding Price , StringFormat={}{0:n0}}"></DataGridTextColumn>
+                            <DataGridTextColumn FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum"
+                                            FontSize="14"
+                                            FontWeight="Normal"
+                                            Width="130*"
+                                            Header="مخارج"
+                                            Binding="{Binding Costs , StringFormat={}{0:n0}}"></DataGridTextColumn>
+                            <DataGridTextColumn FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" 
+                                            FontSize="14" 
+                                            FontWeight="Normal" 
+                                            Width="140*" 
+                                            Header="بهای کل"
+                                            Binding="{Binding TotalPrice , StringFormat={}{0:n0}}"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </TabItem>
+                <TabItem Header="خدمات"
+                         Style="{StaticResource ShatRangy_TabItem}">
+                    <DataGrid x:Name="DGV_Service"
+                          Style="{StaticResource DataGrid_Documents}"
+                          ColumnHeaderHeight="42"
+                          Margin="2" 
+                          FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" 
+                          FontWeight="DemiBold"
+                          FontSize="15" 
+                          BorderThickness="0">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" 
+                                            FontSize="14"
+                                            FontWeight="Normal"
+                                            Width="80*"
+                                            Header="سریال"
+                                            Binding="{Binding ID}"></DataGridTextColumn>
+                            <DataGridTextColumn FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" 
+                                            FontSize="14"
+                                            FontWeight="Normal"
+                                            Width="110*"
+                                            Header="تاریخ شروع"
+                                            Binding="{Binding StartDate}"></DataGridTextColumn>
+                            <DataGridTextColumn FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" 
+                                            FontSize="14"
+                                            FontWeight="Normal"
+                                            Width="110*"
+                                            Header="تاریخ پایان"
+                                            Binding="{Binding EndDate}"></DataGridTextColumn>
+                            <DataGridTextColumn FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" 
+                                            FontSize="14"
+                                            FontWeight="Normal"
+                                            Width="180*"
+                                            Header="مشتری"
+                                            Binding="{Binding CostomerName}"></DataGridTextColumn>
+                            <DataGridTextColumn FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" 
+                                            FontSize="14"
+                                            FontWeight="Normal"
+                                            Width="150*"
+                                            Header="قطعه"
+                                            Binding="{Binding ItemName}"></DataGridTextColumn>
+                            <DataGridTextColumn FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" 
+                                            FontSize="14"
+                                            FontWeight="Normal"
+                                            Width="320*"
+                                            Header="شرح خدمات"
+                                            Binding="{Binding DescriptionService}"></DataGridTextColumn>
+                            <DataGridTextColumn FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" 
+                                            FontSize="14"
+                                            FontWeight="Normal"
+                                            Width="130*"
+                                            Header="کارمزد"
+                                            Binding="{Binding Comision , StringFormat={}{0:n0}}"></DataGridTextColumn>
+                            
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </TabItem>
+                <TabItem Header="تراکنش ها"
+                         Style="{StaticResource ShatRangy_TabItem}"
+                         IsSelected="True">
+                    <DataGrid x:Name="DGV_Transaction"
+                          Style="{StaticResource DataGrid_Documents}"
+                          ColumnHeaderHeight="42"
+                          Margin="2" 
+                          FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" 
+                          FontWeight="DemiBold"
+                          FontSize="15" 
+                          BorderThickness="0">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" 
+                                            FontSize="14"
+                                            FontWeight="Normal"
+                                            Width="80*"
+                                            Header="سریال"
+                                            Binding="{Binding ID}"></DataGridTextColumn>
+                            <DataGridTextColumn FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" 
+                                            FontSize="12"
+                                            FontWeight="Normal"
+                                            Width="100*"
+                                            Header="تاریخ"
+                                            Binding="{Binding Date}"></DataGridTextColumn>
+                            <DataGridTextColumn FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" 
+                                            FontSize="14"
+                                            FontWeight="Normal"
+                                            Width="180*"
+                                            Header="طرف حساب"
+                                            Binding="{Binding AccountSideName}"></DataGridTextColumn>
+                            <DataGridTextColumn FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" 
+                                            FontSize="14"
+                                            FontWeight="Normal"
+                                            Width="320*"
+                                            Header="شرح"
+                                            Binding="{Binding Description}"></DataGridTextColumn>
+                            <DataGridTextColumn FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" 
+                                            FontSize="14"
+                                            FontWeight="Normal"
+                                            Width="130*"
+                                            Header="دریافت"
+                                            Binding="{Binding Recived , StringFormat={}{0:n0}}"></DataGridTextColumn>
+                            <DataGridTextColumn FontFamily="/ShatRangyy;component/Fonts/#IRANSansXFaNum" 
+                                            FontSize="14"
+                                            FontWeight="Normal"
+                                            Width="130*"
+                                            Header="پرداخت"
+                                            Binding="{Binding Payment , StringFormat={}{0:n0}}"></DataGridTextColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </TabItem>
+            </TabControl>
+        </Grid>
+    </Border>
+</UserControl>
